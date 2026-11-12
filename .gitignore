@@ -1,0 +1,43 @@
+.claude
+.mcp.json
+graphify-out/
+**/graphify-out/
+
+# Terraform: state and plans never go in git. .terraform.lock.hcl IS committed (do not ignore it).
+.terraform/
+.terraform-offline/
+*.tfstate
+*.tfstate.*
+*.tfplan
+tfplan*
+# A plan rendered as JSON for the rule check (policy/README.md): never commit it
+plan.json
+*.plan.json
+crash.log
+crash.*.log
+.terraformrc
+terraform.rc
+
+# Override files are only ever created in throwaway copies (scripts/offline-plan)
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Values never go in git: defaults live in variables.tf, per-environment numbers in envs/<env>/main.tf
+*.tfvars
+*.tfvars.json
+
+# Build output (the function zip lands here once the API task adds it)
+.build/
+
+# Python bytecode (policy/ and scripts/ run under python3)
+__pycache__/
+*.pyc
+
+# Local caches and editor/OS files
+.cache/
+.tflint.d/
+.DS_Store
+.idea/
+.vscode/
